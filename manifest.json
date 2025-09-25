@@ -1,0 +1,45 @@
+{
+    "name": "Monster RPG",
+    "id": "localhost/mygame2/",
+    "short_name": "Monster RPG",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "description": "An exciting RPG adventure game featuring various monsters.",
+    "icons": [
+        {
+            "src": "./monsterrpgicon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+        
+    ],
+    "scope": "./",
+    "orientation": "portrait",
+    "lang": "en-US",
+    "dir": "ltr",
+    "keywords": [
+        "RPG",
+        "monsters",
+        "game",
+        "adventure"
+    ],
+    "launch_handler": {
+        "web": {
+            "url": "./"
+        }
+    },
+    "screenshots": [
+        {
+            "src": "./images/screenshot1.png",
+            "sizes": "515x866",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["games", "role-playing"],
+    "iarc_rating_id": "E10+", 
+    "related_applications": [],
+    "prefer_related_applications": false
+}
+

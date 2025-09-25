@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster RPG</title>
+    <link rel="manifest" href="./manifest.json">
+    <script src="phaser.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> -->
+
+
+    
+ 
+    <style>
+       body {
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        }
+
+        /* #gameCanvas {
+            display: block;
+            margin: 0 auto;
+
+          
+        }
+
+
+
+        #control-canvas {
+            width: 100%;
+            height: 150px; 
+            position: relative;
+            top: 0;
+        } */
+
+
+
+
+
+
+/* 
+
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #gameCanvas, #control-canvas {
+            margin: 10px 0;
+        } */
+
+
+
+        #game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100%;
+
+    position: relative;
+    overflow: hidden; /* Prevents any potential overflow */
+
+}
+
+#gameCanvas, #control-canvas {
+    width: 100%;
+    max-width: 100%; /* Adjust as needed */
+    position: relative;
+    z-index: 1; /* Ensures the game and control canvases are below the overlay */
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+#gameCanvas {
+    height: 50%; /* 2/3 of the container */
+}
+
+#control-canvas {
+    height: 50%; /* 1/3 of the container */
+}
+
+
+/* Style for the third game instance (the overlay) */
+#control-panel-overlay {
+    position: absolute; /* Make it overlay on top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure it covers the entire container width */
+    height: 100%; /* Ensure it covers the entire container height */
+    pointer-events: auto; /* Prevent blocking interaction with the other two canvases */
+    z-index: 10; /* Higher z-index to sit on top */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+
+}
+
+/*
+        #game-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        }
+
+        #gameCanvas {
+            flex: 2;
+        }
+
+        #control-canvas {
+            flex: 1;
+        } */
+
+        /*
+        #control-canvas {
+            width: 100%;
+            height: 20vh; Adjust as needed 
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        */
+
+
+
+
+
+
+        #startButtonContainer,
+        #selectButtonContainer,
+        #aButtonContainer,
+        #bButtonContainer,
+        #upButtonContainer,
+        #downButtonContainer,
+        #leftButtonContainer,
+        #rightButtonContainer {
+            position: absolute;
+            top: 90vw; /* Adjust as needed */
+        }
+
+        #startButtonContainer {
+            left: 20vw; /* Adjust as needed */
+        }
+
+        #selectButtonContainer {
+            left: 40vw; /* Adjust as needed */
+        }
+
+        #aButtonContainer {
+            left: 60vw; /* Adjust as needed */
+        }
+
+        #bButtonContainer {
+            left: 80vw; /* Adjust as needed */
+        }
+
+        #upButtonContainer {
+            left: 50vw; /* Adjust as needed */
+            top: 105vw;
+        }
+
+        #downButtonContainer {
+            left: 50vw; /* Adjust as needed */
+            top: 120vw;
+        }
+
+
+        #leftButtonContainer {
+            left: 35vw; /* Adjust as needed */
+            top: 120vw;
+        }
+
+
+        #rightButtonContainer {
+            left: 65vw; /* Adjust as needed */
+            top: 120vw;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div id="gameCanvas"></div>
+
+
+
+    <div id="control-canvas"></div>
+
+
+    <div id="control-panel-overlay"></div>
+    <!-- <div id="buttonsContainer">
+        <div id="startButtonContainer">
+            <img id="startButton" src="images/Start.png" alt="Start Button">
+        </div>
+        <div id="selectButtonContainer">
+            <img id="selectButton" src="images/Select.png" alt="Select Button">
+        </div>
+        <div id="buttonContainer">
+            <div id="aButtonContainer">
+                <img id="aButton" src="images/A.png" alt="A Button">
+            </div>
+            <div id="bButtonContainer">
+                <img id="bButton" src="images/B.png" alt="B Button">
+            </div>
+        </div>
+        <div id="arrowContainer">
+            <div id="upButtonContainer">
+                <img id="upButton" src="images/up.png" alt="Up Button">
+            </div>
+            <div id="leftButtonContainer">
+                <img id="leftButton" src="images/left.png" alt="Up Button">
+            </div>
+            <div id="rightButtonContainer">
+                <img id="rightButton" src="images/right.png" alt="Up Button">
+            </div>
+            <div id="downButtonContainer">
+                <img id="downButton" src="images/down.png" alt="Up Button">
+            </div>
+
+        </div>
+    </div> -->
+    
+
+    
+    <!-- <script src="inputManager.js"></script>
+    <script src="sceneManager.js"></script>
+    <script  src="mainMenuScene.js"></script>
+    <script src="globals.js"></script>
+    <script src="data/collision.js"></script>
+    <script src="data/encounter.js"></script>
+    <script src="data/island.js"></script>
+    <script src="data/fishingSurfing.js"></script>
+    <script src="slider.js"></script>
+    <script src="button.js"></script>
+    <script src="dialogueBox.js"></script>
+    <script src="battleScene.js"></script>
+    <script src="menuScene.js"></script>
+    <script src="starterPokemonScene.js"></script>
+    <script src="interactWithPokemonScene.js"></script>
+    <script src="oldManScene.js"></script>
+    <script src="computerScene.js"></script>
+    <script src="worldScene.js"></script>
+    <script src="partyScene.js"></script>
+    <script src="itemsScene.js"></script>
+    <script src="pokemonDetailsScene.js"></script>
+    <script src="moveListScene.js"></script>
+    <script src="renamePokemonScene.js"></script>
+    <script src="breederScene.js"></script>
+    <script src="pokedexScene.js"></script>
+    <script type="module" src="mapScene.js"></script> -->
+
+
+
+
+
+    <!-- Load globals first to make SceneManager and InputManager accessible -->
+<script src="globals.js"></script>
+
+<!-- Now load the dependencies like SceneManager and InputManager if globals.js hasn't already included them -->
+<script src="sceneManager.js"></script>
+<script src="inputManager.js"></script>
+<script src="eventManager.js"></script>
+
+<script src="dialogueBoxManager.js"></script>
+
+<!-- Data modules can be loaded next, since they don't depend on SceneManager or InputManager -->
+<script src="data/collision.js"></script>
+<script src="data/encounter.js"></script>
+<script src="data/island.js"></script>
+<script src="data/fishingSurfing.js"></script>
+
+<!-- UI components -->
+<script src="slider.js"></script>
+<script src="button.js"></script>
+<script src="dialogueBox.js"></script>
+<script src="monster.js"></script>
+<script src="monsterManager.js"></script>
+<script src="battleUI.js"></script>
+<script src="move.js"></script>
+<script src="item.js"></script>
+<script src="itemManager.js"></script>
+
+<!-- Load the scenes that rely on SceneManager and InputManager -->
+<script src="mainMenuScene.js"></script>
+<script src="battleScene.js"></script>
+<script src="menuScene.js"></script>
+<script src="starterPokemonScene.js"></script>
+<script src="interactWithPokemonScene.js"></script>
+<script src="oldManScene.js"></script>
+<script src="computerScene.js"></script>
+<script src="worldScene.js"></script>
+<script src="partyScene.js"></script>
+<script src="itemsScene.js"></script>
+<script src="pokemonDetailsScene.js"></script>
+<script src="moveListScene.js"></script>
+<script src="renamePokemonScene.js"></script>
+<script src="breederScene.js"></script>
+<script src="pokedexScene.js"></script>
+<script src="transitionScene.js"></script>
+<script src="selectCharacterScene.js"></script>
+
+
+
+<script src="controlScene.js"></script>
+<script src="battleButtonsScene.js"></script>
+
+<script src="controlPanelScene.js"></script>
+
+
+<!-- Load the ES module last, since it may have imports -->
+<script  src="mapScene.js"></script>
+
+<!-- type="module" -->
+<script src="initializeGame.js"></script>
+
+
+</body>
+</html>

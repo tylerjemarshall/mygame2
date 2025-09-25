@@ -1,0 +1,84 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "C:/Users/under/public_html/mygame/tiled/collision.tsx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "C:/Users/under/public_html/mygame/tiled/collision.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/under/public_html/mygame/tiled/colors.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/under/public_html/mygame/tiled/project.tmx": {
+            "scale": 0.24858333333333332,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1200.8045591686223,
+                "y": 1200.8045591686225
+            }
+        },
+        "C:/Users/under/public_html/mygame/tiled/tileGrass.tsx": {
+            "scaleInDock": 1
+        },
+        "collision.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "colors.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "project.tmx": {
+            "scale": 4,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 997.375,
+                "y": 734.375
+            }
+        },
+        "stardew - Copy.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "stardew.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 1
+        },
+        "tileGrass.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/under/public_html/mygame/images",
+    "last.imagePath": "C:/Users/under/public_html/mygame/images",
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 12,
+    "map.tileWidth": 12,
+    "openFiles": [
+        "C:/Users/under/public_html/mygame/tiled/project.tmx",
+        "C:/Users/under/public_html/mygame/tiled/collision.tsx"
+    ],
+    "project": "tylertiled.tiled-project",
+    "recentFiles": [
+        "C:/Users/under/public_html/mygame/tiled/project.tmx",
+        "C:/Users/under/public_html/mygame/tiled/collision.tsx",
+        "stardew - Copy.tsx",
+        "colors.tsx",
+        "collision.tsx",
+        "tileGrass.tsx",
+        "project.tmx",
+        "stardew.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 12,
+        "width": 12
+    }
+}
